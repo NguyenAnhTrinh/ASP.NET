@@ -2,6 +2,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+var connectionTestDbConnection = builder.Configuration.GetConnectionString("MyConnect");
+
+// builder.Services.AddDbContext<FPTBook.Models.DbtestContext>(options =>
+//    options.UseSqlServer(connectionTestDbConnection));
 
 var app = builder.Build();
 
